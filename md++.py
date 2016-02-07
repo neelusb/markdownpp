@@ -8,18 +8,22 @@ bold=False
 escapeMd=''
 isStyle=False
 isHeading=False
+footerContent=''
 style=False
 styleContent=''
 cssCodeClass=''
+cssSupClass=''
+beforeSize=''
 color="black"
 title=''
 line=0
 isCode=False
+isSup=False
 size="medium"
 align='left'
 def createspan():
-    sys.stdout.write('</span><span '+cssCodeClass+'style="font-weight: '+('normal','bold')[bold]+'; text-decoration: '+('none','underline','line-through','overline')[line]+'; font-style: '+('normal','oblique','italic')[style]+'; font-size: '+size+'; text-align: '+align+'; "'+styleContent+' >')
-sys.stdout.write('<!DOCTYPE html>\n<html><head><style>.code {background-color:#EEEEEE;font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;}</style><title>'+title+'</title></head><body>')
+    sys.stdout.write('</span><span '+cssCodeClass+cssSupClass+'style="font-weight: '+('normal','bold')[bold]+'; text-decoration: '+('none','underline','line-through','overline')[line]+'; font-style: '+('normal','oblique','italic')[style]+'; font-size: '+size+'; text-align: '+align+'; "'+styleContent+' >')
+sys.stdout.write('<!DOCTYPE html>\n<html><head><style>.code {background-color:#EEEEEE;font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;} .sup { vertical-align: super; }</style><title>'+title+'</title></head><body>')
 sys.stdout.write('<span>')
 createspan()
 while len(md) > 0:
@@ -187,7 +191,7 @@ while len(md) > 0:
             size="medium"
             isHeading=False
     if md[0]=='+':
-        sys.stdout.write("&bull;")
+        sys.stdout.write("&bull; ")
         md=md[1:]
     if md.startswith(";;"):
         if isHeading==True:
@@ -207,9 +211,26 @@ while len(md) > 0:
         md=md[2:]
         createspan()
         continue
+    if md.startswith("^"):
+        if isSup==False:
+            beforeSize=size
+            cssSupClass="class=sup "
+            isSup=True
+            if beforeSize=="medium":
+                size="small"
+            if beforeSize[-0]=="m" and beforeSize[-1]=="e":
+                size=0.7*beforeSize[0::2]+"em"
+        else:
+            cssSupClass=''
+            size=beforeSize
+            beforeSize=''
+            isSup=False
+        md=md[1:]
+        createspan()
+        continue
     sys.stdout.write(md[0])
     md=md[1:]
 sys.stdout.write('</span>')
-sys.stdout.write("\n<div align='center'><footer align:'center'><p style='font-size:12px; margin:auto;'>Designed using <a href='http://neelu.co/mdpp'>MarkDown++</a></p></footer></div>")
+sys.stdout.write("\n<div align='center'><footer align:'center'><p style='font-size:12px; margin:auto;'>Designed using <a href='http://neelu.co/mdpp' target='_blank'>MarkDown++</a></p></footer></div>")
 sys.stdout.write('</body></html>')
 sys.stdout.flush()
