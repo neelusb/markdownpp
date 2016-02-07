@@ -228,6 +228,13 @@ while len(md) > 0:
         md=md[1:]
         createspan()
         continue
+    if md.startswith("<{"):
+        while md[0] is not ("}"):
+            styleContent=md
+    createspan()
+    continue
+    if md.startswith(">"):
+        styleContent=''
     sys.stdout.write(md[0])
     md=md[1:]
 sys.stdout.write('</span>')
