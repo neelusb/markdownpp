@@ -7,7 +7,7 @@ md=sys.stdin.read()
 bold=False
 escapeMd=''
 isStyle=False
-isHeading=SFalse
+isHeading=False
 footerContent=''
 style=False
 styleContent=''
@@ -15,6 +15,9 @@ cssCodeClass=''
 cssSupClass=''
 beforeSize=''
 color="black"
+lineSize=0
+lineLength=0
+fixBr=''
 title=(str(datetime.datetime.now())[:-7])
 line=0
 isCode=False
@@ -50,56 +53,63 @@ while len(md) > 0:
             md=md[1: ]
         md=md[2: ]
         continue
+    if md.startswith("=#="):
+        bold=False
+        size="medium"
+        isHeading=False
+        md=md[3:]
+        createspan()
+        continue
     if md.startswith("######"):
         isHeading=True
         size="0.75em"
-        bold=not bold
+        bold=True
         md=md[6:]
         createspan()
         continue
     if md.startswith("#####"):
         isHeading=True
         size="0.83em"
-        bold=not bold
+        bold=True
         md=md[5:]
         createspan()
         continue
     if md.startswith("####"):
         isHeading=True
         size="1em"
-        bold=not bold
+        bold=True
         md=md[4:]
         createspan()
         continue
     if md.startswith("###"):
         isHeading=True
         size="1.17em"
-        bold=not bold
+        bold=True
         md=md[3:]
         createspan()
         continue
     if md.startswith("##"):
         isHeading=True
         size="1.5em"
-        bold=not bold
+        bold=True
         md=md[2:]
         createspan()
         continue
     if md.startswith("#"):
         isHeading=True
         size="2em"
-        bold=not bold
+        bold=True
         md=md[1:]
         createspan()
         continue
-    if md[0]=='|'and len(md)>2 and md[2]=='|':
-        if md[1]=='<': align='left'
-        if md[1]=='^': align='center'
-        if md[1]=='>': align='right'
-        if md[1]=='=': align='justify'
-        md=md[3:]
-        createspan()
-        continue
+    # if md[0]=='|'and len(md)>2 and md[2]=='|':
+    #     if md[1]=='<': align='left'
+    #     if md[1]=='^': align='center'
+    #     if md[1]=='>': align='right'
+    #     if md[1]=='=': align='justify'
+    #     md=md[3:]
+    #     createspan()
+    #     continue
     if md.startswith("3---"):
         md=md[4:]
         sys.stdout.write('<div style="width: 80%; background-color: '+color+'; margin-left: '+('0','10','10','20')[('left','center','justify','right').index(align)]+'%; height: 2px;"></div>')
@@ -171,9 +181,11 @@ while len(md) > 0:
     if md.startswith("[["):
         isHtml=True
         md=md[2:]
+        continue
     if md.startswith("]]"):
         isHtml=False
         md=md[2:]
+        continue
     if md.startswith("`"):
         if isCode==False:
             cssCodeClass='class=code '
@@ -205,6 +217,12 @@ while len(md) > 0:
     if md[0]=='+':
         sys.stdout.write("&bull; ")
         md=md[1:]
+    if md.startswith("(c)"):
+        sys.stdout.write("&copy;")
+        md=md[3:]
+    if md.startswith("(tm)"):
+        sys.stdout.write("&trade;")
+        md=md[4:]
     if md.startswith(";;"):
         if isHeading==True:
             bold=not bold
