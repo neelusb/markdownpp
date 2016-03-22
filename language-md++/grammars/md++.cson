@@ -2,7 +2,7 @@
 #   - http://manual.macromates.com/en/language_grammars
 
 'scopeName': 'source.md++'
-'name': 'PackageName'
+'name': 'MarkDown++'
 'fileTypes': [
   'extension'
 ]

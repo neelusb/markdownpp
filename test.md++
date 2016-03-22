@@ -2,8 +2,20 @@
 @8593  
 \@8592  
 #@8593  
-#hmm.. ##hope this works. =#=normal ###h3 ####this too?   
+#hmm.. ##hope this works. =#=normal ###h3 ####this too?  
+<{http://www.google.com}Google>   
 (c)  
 (tm)  
+<{<(http://cdn2.mhpbooks.com/2016/02/google.jpg)Google>}>
 [[<p>No Tag!</p>]]
 <p>Yes Tag!</p>  
+`<p>Code block!:)</p>`  
+Normal  
+/*Comment*/
+%%Overline?%%  
+<(http://cdn2.mhpbooks.com/2016/02/google.jpg)logo>
+[[`<p>how will this work?</p>`
+<span>Hello</span><span>Hi</span>
+<p>Tihs is so useful:)</p>]]
+*Oblique?*  
+**Bold?**  
