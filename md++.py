@@ -30,7 +30,7 @@ isHtml=False
 size="medium"
 align='left'
 def createspan():
-    sys.stdout.write('</span><span '+cssCodeClass+cssSupClass+'style="font-weight: '+('normal','bold')[bold]+'; text-decoration: '+('none','underline','line-through','overline')[line]+'; font-style: '+('normal','oblique','italic')[style]+'; font-size: '+size+'; text-align: '+align+'; "'+styleContent+' >')
+    sys.stdout.write('</span><span '+cssCodeClass+cssSupClass+'style="font-weight: '+('normal','bold')[bold]+'; text-decoration: '+('none','underline','line-through','overline')[line]+'; font-style: '+('normal','oblique','italic')[style]+'; font-size: '+size+'; text-align: '+align+'; '+styleContent+'" >')
 sys.stdout.write("""<!DOCTYPE html>
 <html>
     <head>
@@ -120,6 +120,19 @@ while len(md) > 0:
     #     md=md[3:]
     #     createspan()
     #     continue
+    if md.startswith("<["):
+        md=md[2:]
+        while md[0] is not "]":
+            styleContent=styleContent+md[0]
+            md=md[1:]
+        md=md[1:]
+        createspan()
+        while md[0] is not ">":
+            sys.stdout.write(md[0])
+            md=md[1:]
+        md=md[1:]
+        createspan()
+        continue
     if md.startswith("<{<("):
         md=md[4:]
         while md[0] is not ")":
@@ -160,6 +173,10 @@ while len(md) > 0:
             md=md[1:]
         md=md[1:]
         sys.stdout.write('      <a href="'+link+'"><img src="'+imageUrl+'" alt="'+imageAlt+'" style="width:30%" title="'+imageAlt+'" /></a>')
+        link=''
+        linkText=''
+        imageAlt=''
+        imageUrl=''
         createspan()
         continue
     if md.startswith("<{"):
@@ -173,6 +190,8 @@ while len(md) > 0:
             md=md[1:]
         md=md[1:]
         sys.stdout.write('      <a href="'+link+'">'+linkText+'</a>')
+        link=''
+        linkText=''
         createspan()
         continue
     if md.startswith("<("):
@@ -186,6 +205,8 @@ while len(md) > 0:
             md=md[1:]
         md=md[1:]
         sys.stdout.write('      <img src="'+imageUrl+'" alt="'+imageAlt+'" style="width:30%" title="'+imageAlt+'" />')
+        imageAlt=''
+        imageUrl=''
         createspan()
         continue
     if md.startswith("3---"):
@@ -213,7 +234,10 @@ while len(md) > 0:
         sys.stdout.write('      <div style="width: 50%; background-color: '+color+'; margin-left: '+('0','10','10','20')[('left','center','justify','right').index(align)]+'%; height: 2px;"></div>\n')
         continue
     if md.startswith("**"):
-        bold=True
+        if bold==False:
+            bold=True
+        else:
+            bold=False
         md=md[2:]
         createspan()
         continue
@@ -330,6 +354,7 @@ sys.stdout.write("""        <br />
         Designed using <a href='http://neelu.co/mdpp' target='_blank'>MarkDown++</a></p>
         </footer>
         </div>""")
-sys.stdout.write("""\n    </body>
+sys.stdout.write("""
+    </body>
 </html>""")
 sys.stdout.flush()

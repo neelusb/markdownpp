@@ -6,6 +6,8 @@
 <{http://www.google.com}Google>   
 (c)  
 (tm)  
+**Bold**  
+Bold Over  
 <{<(http://cdn2.mhpbooks.com/2016/02/google.jpg)Google>}>
 [[<p>No Tag!</p>]]
 <p>Yes Tag!</p>  
@@ -19,3 +21,5 @@ Normal
 <p>Tihs is so useful:)</p>]]
 *Oblique?*  
 **Bold?**  
+<[color:blue;]Should be Blue>  
+<{<[background-color:pink;]http://www.google.com}>Google>
