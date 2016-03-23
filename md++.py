@@ -120,19 +120,6 @@ while len(md) > 0:
     #     md=md[3:]
     #     createspan()
     #     continue
-    if md.startswith("<["):
-        md=md[2:]
-        while md[0] is not "]":
-            styleContent=styleContent+md[0]
-            md=md[1:]
-        md=md[1:]
-        createspan()
-        while md[0] is not ">":
-            sys.stdout.write(md[0])
-            md=md[1:]
-        md=md[1:]
-        createspan()
-        continue
     if md.startswith("<{<("):
         md=md[4:]
         while md[0] is not ")":
@@ -151,7 +138,11 @@ while len(md) > 0:
             linkText=linkText+md[0]
             md=md[1:]
         md=md[1:]
-        sys.stdout.write('      <a href="'+link+'"><img src="'+imageUrl+'" alt="'+imageAlt+'" style="width:30%" title="'+imageAlt+'" /></a>')
+        sys.stdout.write('      <a href="'+link+'"><img src="'+imageUrl+'" alt="'+imageAlt+'" style="width:30%" title="'+imageAlt+'" style="'+styleContent+'" /></a>')
+        link=''
+        linkText=''
+        imageAlt=''
+        imageUrl=''
         createspan()
         continue
     if md.startswith("<(<{"):
@@ -172,11 +163,25 @@ while len(md) > 0:
             imageAlt=imageAlt+md[0]
             md=md[1:]
         md=md[1:]
-        sys.stdout.write('      <a href="'+link+'"><img src="'+imageUrl+'" alt="'+imageAlt+'" style="width:30%" title="'+imageAlt+'" /></a>')
+        sys.stdout.write('      <a href="'+link+'"><img src="'+imageUrl+'" alt="'+imageAlt+'" style="width:30%" title="'+imageAlt+'" style="'+styleContent+'" /></a>')
         link=''
         linkText=''
         imageAlt=''
         imageUrl=''
+        createspan()
+        continue
+    if md.startswith("<["):
+        md=md[2:]
+        while md[0] is not "]":
+            styleContent=styleContent+md[0]
+            md=md[1:]
+        md=md[1:]
+        createspan()
+        while md[0] is not ">":
+            sys.stdout.write(md[0])
+            md=md[1:]
+        md=md[1:]
+        styleContent=''
         createspan()
         continue
     if md.startswith("<{"):
@@ -204,7 +209,7 @@ while len(md) > 0:
             imageAlt=imageAlt+md[0]
             md=md[1:]
         md=md[1:]
-        sys.stdout.write('      <img src="'+imageUrl+'" alt="'+imageAlt+'" style="width:30%" title="'+imageAlt+'" />')
+        sys.stdout.write('      <img src="'+imageUrl+'" alt="'+imageAlt+'" style="width:30%" title="'+imageAlt+'" style="'+styleContent+'" />')
         imageAlt=''
         imageUrl=''
         createspan()
