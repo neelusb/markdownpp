@@ -26,6 +26,6 @@ else
   chmod +x /usr/local/bin/uninstall-md++ &&
   chmod +x /usr/local/bin/update-md++ &&
   echo Created Uninstall and Update files and made them executable.
-  rm -r markdownpp &&
+  rm -rf markdownpp &&
   echo Deleted repository &&
   echo MarkDown++ has been updated.;
