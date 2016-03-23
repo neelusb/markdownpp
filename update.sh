@@ -22,10 +22,11 @@ else
   mv -f markdownpp/update.sh /usr/local/bin/markdownpp/update.sh &&
   mv -f markdownpp/uninstall.sh /usr/local/bin/markdownpp/uninstall.sh &&
   mv -f markdownpp/installFiles/update.sh /usr/local/bin/update-md++ &&
-  mv -f markdownpp/installFiles/uninstall.sh /usr/local/bin/uninstall-md++ &&
+  mv -f markdownpp/installFiles/uninstall.sh /usr/local/bin/uninstasll-md++ &&
   chmod +x /usr/local/bin/uninstall-md++ &&
   chmod +x /usr/local/bin/update-md++ &&
-  echo Created Uninstall and Update files and made them executable.
+  echo Created Uninstall and Update files and made them executable. &&
   rm -rf markdownpp &&
-  echo Deleted repository &&
+  echo Deleted repository. &&
   echo MarkDown++ has been updated.;
+fi
