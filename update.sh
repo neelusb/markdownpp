@@ -1,6 +1,6 @@
 localVersion=`cat /usr/local/bin/markdownpp/VERSION`
 cloudVersion=$(curl https://raw.githubusercontent.com/neelusb/markdownpp/master/VERSION)
-if [$localVersion=$cloudVersion]
+if [ "$localVersion" -eq "$cloudVersion" ]
 then
   echo You have the latest version of MarkDown++.
 else
@@ -22,7 +22,7 @@ else
   mv -f markdownpp/update.sh /usr/local/bin/markdownpp/update.sh &&
   mv -f markdownpp/uninstall.sh /usr/local/bin/markdownpp/uninstall.sh &&
   mv -f markdownpp/installFiles/update.sh /usr/local/bin/update-md++ &&
-  mv -f markdownpp/installFiles/uninstall.sh /usr/local/bin/uninstasll-md++ &&
+  mv -f markdownpp/installFiles/uninstall.sh /usr/local/bin/uninstall-md++ &&
   chmod +x /usr/local/bin/uninstall-md++ &&
   chmod +x /usr/local/bin/update-md++ &&
   echo Created Uninstall and Update files and made them executable. &&
