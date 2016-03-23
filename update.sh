@@ -1,6 +1,6 @@
 localVersion=`cat /usr/local/bin/markdownpp/VERSION`
 cloudVersion=$(curl https://raw.githubusercontent.com/neelusb/markdownpp/master/VERSION)
-if [ "$localVersion" -eq "$cloudVersion" ]
+if [ "$localVersion" = "$cloudVersion" ]
 then
   echo You have the latest version of MarkDown++.
 else
