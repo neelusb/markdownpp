@@ -4,7 +4,7 @@ sudo apt-get install curl &&
 sudo apt-get install git &&
 git clone https://www.github.com/neelusb/markdownpp.git &&
 echo Cloned into repository. &&
-mv markdownpp/md++.py /usr/local/bin/md++ &&
+sudo mv markdownpp/md++.py /usr/local/bin/md++ &&
 echo Created MarkDown++ file. &&
 chmod +x /usr/local/bin/md++ &&
 echo Made MarkDown++ file executable &&
