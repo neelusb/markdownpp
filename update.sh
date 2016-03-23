@@ -1,4 +1,4 @@
-localVersion=`cat sources.xml`
+localVersion=`cat /usr/local/bin/markdownpp/VERSION`
 cloudVersion=$(curl https://raw.githubusercontent.com/neelusb/markdownpp/master/VERSION)
 if [$localVersion=$cloudVersion]
 then

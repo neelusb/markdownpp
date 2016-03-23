@@ -1,2 +1,2 @@
 #!/bin/bash
-bash /usr/local/bin/uninstall.sh
+bash /usr/local/bin/markdownpp/uninstall.sh
