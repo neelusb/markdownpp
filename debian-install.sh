@@ -8,9 +8,9 @@ sudo mv markdownpp/md++.py /usr/local/bin/md++ &&
 echo Created MarkDown++ file. &&
 chmod +x /usr/local/bin/md++ &&
 echo Made MarkDown++ file executable &&
-mkdir /usr/local/bin/markdownpp &&
+sudo mkdir /usr/local/bin/markdownpp &&
 echo Created Markdown++ directory. &&
-mv markdownpp/VERSION /usr/local/bin/markdownpp/VERSION &&
+sudo mv markdownpp/VERSION /usr/local/bin/markdownpp/VERSION &&
 echo Updated VERSION file &&
 sudo mv -f markdownpp/update.sh /usr/local/bin/markdownpp/update.sh &&
 sudo mv -f markdownpp/uninstall.sh /usr/local/bin/markdownpp/uninstall.sh &&
