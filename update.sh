@@ -29,5 +29,5 @@ else
   rm -rf markdownpp &&
   echo Deleted repository. &&
   echo MarkDown++ has been updated.;
+  localVersion=`cat /usr/local/bin/markdownpp/VERSION`
 fi
-localVersion=`cat /usr/local/bin/markdownpp/VERSION`
