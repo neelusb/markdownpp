@@ -30,3 +30,4 @@ else
   echo Deleted repository. &&
   echo MarkDown++ has been updated.;
 fi
+localVersion=`cat /usr/local/bin/markdownpp/VERSION`
