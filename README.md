@@ -1,5 +1,5 @@
 # MarkDown++
-MarkDown++ is an innovated and upgraded version of MarkDown, which lets you do simple and advanced design the same basic syntax. Like Markdown, MarkDown++ can be used for web development and papers like essays, but MarkDown++ adds a lot more design capability, and can also be used for more advanced design.
+MarkDown++ is an innovated and upgraded version of Markdown, which lets you do simple and advanced design the same basic syntax. Like Markdown, MarkDown++ can be used for web development and papers like essays, but MarkDown++ adds a lot more design capability, and can also be used for more advanced design.
 
 ## Syntax
 ### General Text Formatting  
