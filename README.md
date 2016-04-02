@@ -28,7 +28,7 @@ MarkDown++ is an innovated and upgraded version of MarkDown, which lets you do s
 `[[<p>HTML</p>]]` --> <span>HTML</span>
 
 ### Headings/Headers
-#H1 - ######H6 --> <h1> to <h6> 
+`#H1` - `######H6` --> &lt;h1&gt; to &lt;h6&gt; 
 
 ### Images and Hyperlinks
 
