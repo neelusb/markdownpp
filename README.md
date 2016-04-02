@@ -84,6 +84,13 @@ Download the install script for your Operating System, and then execute it by do
 <a href="https://raw.githubusercontent.com/neelusb/markdownpp/master/gentoo-install.sh" download>Gentoo Linux</a>  
 **NOTE:** Only the OS X and Debian/Ubuntu Linux install scripts have been tested. Please <a href="mailto:neelu.rsa@gmail.com">contact me</a> if the other ones have any bugs.
 
+##Usage
+
+Use the following command to translate a MarkDown++ file into an HTML file:
+```
+md++ < /path/to/input.md++ > /path/to/output.md++
+```
+
 ## Updating and Uninstalling
 Update and Uninstall scripts are automatically installed when you install MarkDown++.  
 To update MarkDown++, use the command `update-md++` in your command line.  
