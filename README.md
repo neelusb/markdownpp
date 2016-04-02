@@ -28,22 +28,7 @@ MarkDown++ is an innovated and upgraded version of MarkDown, which lets you do s
 `[[<p>HTML</p>]]` --> <span>HTML</span>
 
 ### Headings/Headers
-`#H1` --> #H1  
-`##H2` --> ##H2  
-`###H3` --> ###H3  
-`####H4` --> ####H4  
-`#####H5` --> #####H5  
-`######H6` --> ######H6  
-```
-#H1 ##H2  
-Normal Text  
-###H3 =#=Normal Text ###H3
-```
-  &#8595;  
- 
-#H1 H2 *(Should be H2, but GFM doesn't allow that)*   
-Normal Text  
-###H3 Normal Text *(This text should be normal, but again, GFM doesn't allow that)* H3
+#H1 - ######H6 --> <h1> to <h6> 
 
 ### Images and Hyperlinks
 
