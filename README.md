@@ -28,12 +28,12 @@ MarkDown++ is an innovated and upgraded version of MarkDown, which lets you do s
 `[[<p>HTML</p>]]` --> <span>HTML</span>
 
 ### Headings/Headers
-`#H1` --> <span style="font-weight:bold; font-size:2em;">H1</span>  
-`#H2` --> <span style="font-weight:bold; font-size:1.5em;">H2</span>  
-`#H3` --> <span style="font-weight:bold; font-size:1.17em;">H3</span>  
-`#H4` --> <span style="font-weight:bold; font-size:1em;">H4</span>  
-`#H5` --> <span style="font-weight:bold; font-size:0.83em;">H5</span>  
-`#H6` --> <span style="font-weight:bold; font-size:0.75em;">H6</span>  
+`#H1` --> #H1  
+`##H2` --> ##H2  
+`###H3` --> ###H3  
+`####H4` --> ####H4  
+`#####H5` --> #####H5  
+`######H6` --> ######H6  
 ```
 #H1 ##H2  
 Normal Text  
@@ -41,9 +41,9 @@ Normal Text
 ```
   &#8595;  
  
-<span style="font-weight:bold; font-size:2em;">H1</span> <span style="font-weight:bold; font-size:1.5em;">H2</span>   
+#H1 H2 *(Should be H2, but GFM doesn't allow that)*   
 Normal Text  
-<span style="font-weight:bold; font-size:1.17em;">H3</span> Normal Text <span style="font-weight:bold; font-size:1.17em;">H3</span>  
+###H3 Normal Text *(This text should be normal, but again, GFM doesn't allow that)* H3
 
 ### Images and Hyperlinks
 
@@ -69,7 +69,7 @@ For example: `@181` --> &#181;
 `**Bold Text** \* Just an asterisk` --> **Bold Text** * Just an asterisk  
 
 ### CSS-format styling  
-`<[color:blue;]Blue text>` --> <span style="color:blue;">Blue text</span>  
+`<[color:blue;]Blue text>` --> <span style="color:blue;">Blue text</span> *(This text should be blue, but GitHub flavoured Markdown doesn't allow that...)* 
 **NOTE:** Currently, CSS styling can not be used with images and hyperlinks. This will be fixed in a later update.
 
 ### Comments
