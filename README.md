@@ -88,7 +88,7 @@ Download the install script for your Operating System, and then execute it by do
 
 Use the following command to translate a MarkDown++ file into an HTML file:
 ```
-md++ < /path/to/input.md++ > /path/to/output.md++
+md++ < /path/to/input.md++ > /path/to/output.html
 ```
 
 ## Updating and Uninstalling
