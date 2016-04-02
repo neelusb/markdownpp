@@ -13,6 +13,7 @@ Bold Over
 <p>Yes Tag!</p>  
 `<p>Code block!:)</p>`  
 Normal  
+<(<{https://www.google.com}>http://cdn2.mhpbooks.com/2016/02/google.jpg)Alt and title text>  
 /*Comment*/
 %%Overline?%%  
 <(http://cdn2.mhpbooks.com/2016/02/google.jpg)logo>
@@ -22,4 +23,6 @@ Normal
 *Oblique?*  
 **Bold?**  
 <[color:blue;]Should be Blue>  
-<{https://www.google.com}Google>
+<{https://www.google.com}Google>  
+<{<(http://cdn2.mhpbooks.com/2016/02/google.jpg)Alt and title text>https://www.google.com}>  
+[[<a href="https://www.google.com"><img style="width: 30%;" src="http://cdn2.mhpbooks.com/2016/02/google.jpg" /></a>]]
