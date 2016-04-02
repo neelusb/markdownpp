@@ -353,12 +353,6 @@ while len(md) > 0:
     sys.stdout.write(md[0])
     md=md[1:]
 sys.stdout.write('</span>')
-sys.stdout.write("""        <br />
-        <div align='center'>
-        <footer align:'center'><p style='font-size:12px; margin:auto;'>
-        Designed using <a href='http://neelu.co/mdpp' target='_blank'>MarkDown++</a></p>
-        </footer>
-        </div>""")
 sys.stdout.write("""
     </body>
 </html>""")
