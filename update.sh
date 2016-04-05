@@ -20,7 +20,7 @@ else
   sudo mkdir /usr/local/bin/markdownpp &&
   echo Created Markdown++ directory. &&
   sudo mv markdownpp/md++.py /usr/local/bin/markdownpp/md++.py &&
-  sudo cp markdownpp/md++PythonModule /usr/local/bin/markdownpp/mdpp.py &&
+  sudo cp markdownpp/md++PythonModule.py /usr/local/bin/markdownpp/mdpp.py &&
   if [ -d "/Library/Python/2.7/site-packages/" ]
   then
     sudo mv markdownpp/md++PythonModule.py /Library/Python/2.7/site-packages/mdpp.py ;
