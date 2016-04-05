@@ -12,7 +12,7 @@ sudo mkdir /usr/local/bin/markdownpp &&
 echo Created Markdown++ directory. &&
 sudo mv markdownpp/VERSION /usr/local/bin/markdownpp/VERSION &&
 echo Updated VERSION file &&
-sudo mv markdownpp/md++PythonModule /usr/local/bin/markdownpp/mdpp.py &&
+sudo mv markdownpp/md++PythonModule.py /usr/local/bin/markdownpp/mdpp.py &&
 sudo mv markdownpp/md++.py /usr/local/bin/markdownpp/md++.py &&
 echo Created Python Module. &&
 sudo mv -f markdownpp/update.sh /usr/local/bin/markdownpp/update.sh &&

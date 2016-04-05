@@ -8,8 +8,8 @@ chmod +x /usr/local/bin/md++ &&
 echo Made MarkDown++ file executable &&
 mkdir /usr/local/bin/markdownpp &&
 echo Created Markdown++ directory. &&
-sudo cp markdownpp/md++PythonModule /Library/Python/2.7/site-packages/mdpp.py &&
-mv markdownpp/md++PythonModule /usr/local/bin/markdownpp/mdpp.py &&
+sudo cp markdownpp/md++PythonModule.py /Library/Python/2.7/site-packages/mdpp.py &&
+mv markdownpp/md++PythonModule.py /usr/local/bin/markdownpp/mdpp.py &&
 mv markdownpp/md++.py /usr/local/bin/markdownpp/md++.py &&
 echo Created Python Module. &&
 mv markdownpp/VERSION /usr/local/bin/markdownpp/VERSION &&
