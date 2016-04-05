@@ -4,8 +4,7 @@ sudo yum install python &&
 sudo yum install curl &&
 git clone https://www.github.com/neelusb/markdownpp.git &&
 echo Cloned into repository. &&
-mv markdownpp/md++.sh /usr/local/bin/md++ &&
-mv markdownpp/md++.py /usr/local/bin/markdownpp/md++.py &&
+sudo mv markdownpp/md++.sh /usr/local/bin/md++ &&
 echo Created MarkDown++ file. &&
 chmod +x /usr/local/bin/md++ &&
 echo Made MarkDown++ file executable &&
@@ -14,6 +13,7 @@ echo Created Markdown++ directory. &&
 mv markdownpp/VERSION /usr/local/bin/markdownpp/VERSION &&
 echo Updated VERSION file &&
 sudo mv markdownpp/md++PythonModule /usr/local/bin/markdownpp/mdpp.py &&
+sudo mv markdownpp/md++.py /usr/local/bin/markdownpp/md++.py &&
 echo Created Python Module. &&
 mv -f markdownpp/update.sh /usr/local/bin/markdownpp/update.sh &&
 mv -f markdownpp/uninstall.sh /usr/local/bin/markdownpp/uninstall.sh &&

@@ -6,6 +6,8 @@ then
 else
   git clone https://www.github.com/neelusb/markdownpp.git &&
   echo Cloned into repository. &&
+  bash markdownpp/extraUpdateScripts.#!/bin/sh &&
+  echo Ran extra update scripts. &&
   sudo rm -f /usr/local/bin/md++ &&
   sudo rm -f /usr/local/bin/uninstall-md++ &&
   sudo rm -f /usr/local/bin/update-md++ &&
@@ -17,6 +19,7 @@ else
   echo Made MarkDown++ file executable &&
   sudo mkdir /usr/local/bin/markdownpp &&
   echo Created Markdown++ directory. &&
+  sudo mv markdownpp/md++.py /usr/local/bin/markdownpp/md++.py &&
   sudo cp markdownpp/md++PythonModule /usr/local/bin/markdownpp/mdpp.py &&
   if [ -d "/Library/Python/2.7/site-packages/" ]
   then
