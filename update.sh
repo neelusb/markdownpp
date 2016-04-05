@@ -6,7 +6,7 @@ then
 else
   git clone https://www.github.com/neelusb/markdownpp.git &&
   echo Cloned into repository. &&
-  bash markdownpp/extraUpdateScripts.#!/bin/sh &&
+  bash markdownpp/extraUpdateScripts.sh&&
   echo Ran extra update scripts. &&
   sudo rm -f /usr/local/bin/md++ &&
   sudo rm -f /usr/local/bin/uninstall-md++ &&
