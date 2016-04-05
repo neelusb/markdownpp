@@ -3,7 +3,9 @@
 import sys
 import datetime
 import os
+out=''
 def run(md):
+    global out
     out=''
     bold=False
     escapeMd=''
@@ -11,7 +13,7 @@ def run(md):
     imageAlt=''
     isStyle=False
     isHeading=False
-    footerContent=''md
+    footerContent=''
     style=False
     styleContent=''
     cssCodeClass=''
@@ -31,14 +33,14 @@ def run(md):
     size="medium"
     align='left'
     def createspan():
-        out=out+('</span><span '+cssCodeClass+cssSupClass+'style="font-weight: '+('normal','bold')[bold]+'; text-decoration: '+('none','underline','line-through','overline')[line]+'; font-style: '+('normal','oblique','italic')[style]+'; font-size: '+size+'; text-align: '+align+'; '+styleContent+'" >')
-    out=out+("""<!DOCTYPE html>
-    <html>
-        <head>
-            <style>.code {background-color:#EEEEEE;font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;} .sup { vertical-align: super; }</style>
-            <title>"""+title+"""</title>
-        </head>
-        <body>\n""")
+        global out
+        out=out+'</span><span '+cssCodeClass+cssSupClass+'style="font-weight: '+('normal','bold')[bold]+'; text-decoration: '+('none','underline','line-through','overline')[line]+'; font-style: '+('normal','oblique','italic')[style]+'; font-size: '+size+'; text-align: '+align+'; '+styleContent+'" >'
+    out=out+"""<!DOCTYPE html>
+    <head>
+        <style>.code {background-color:#EEEEEE;font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;} .sup { vertical-align: super; }</style>
+        <title>"""+title+"""</title>
+    </head>
+    <body>\n"""
     out=out+('<span>')
     createspan()
     while len(md) > 0:

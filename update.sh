@@ -23,9 +23,9 @@ else
   sudo cp markdownpp/md++PythonModule /usr/local/bin/markdownpp/mdpp.py &&
   if [ -d "/Library/Python/2.7/site-packages/" ]
   then
-    sudo mv markdownpp/md++PythonModule.py /Library/Python/2.7/site-packages/mdpp.py &&
+    sudo mv markdownpp/md++PythonModule.py /Library/Python/2.7/site-packages/mdpp.py ;
   else
-    sudo rm md++PythonModule
+    sudo rm md++PythonModule;
   fi
   echo Created Python Module. &&
   sudo mv markdownpp/VERSION /usr/local/bin/markdownpp/VERSION &&
