@@ -13,7 +13,7 @@ mkdir /usr/local/bin/markdownpp &&
 echo Created Markdown++ directory. &&
 mv markdownpp/VERSION /usr/local/bin/markdownpp/VERSION &&
 echo Updated VERSION file &&
-mv markdownpp/md++PythonModule /usr/local/bin/markdownpp/mdpp.py &&
+sudo mv markdownpp/md++PythonModule /usr/local/bin/markdownpp/mdpp.py &&
 echo Created Python Module. &&
 mv -f markdownpp/update.sh /usr/local/bin/markdownpp/update.sh &&
 mv -f markdownpp/uninstall.sh /usr/local/bin/markdownpp/uninstall.sh &&

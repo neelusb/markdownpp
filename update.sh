@@ -11,12 +11,20 @@ else
   sudo rm -f /usr/local/bin/update-md++ &&
   sudo rm -rf /usr/local/bin/markdownpp &&
   echo Deleted outdated files. &&
-  sudo mv markdownpp/md++.py /usr/local/bin/md++ &&
+  sudo mv markdownpp/md++.sh /usr/local/bin/md++ &&
   echo Created MarkDown++ file. &&
   chmod +x /usr/local/bin/md++ &&
   echo Made MarkDown++ file executable &&
   sudo mkdir /usr/local/bin/markdownpp &&
   echo Created Markdown++ directory. &&
+  sudo cp markdownpp/md++PythonModule /usr/local/bin/markdownpp/mdpp.py &&
+  if [ -d "/Library/Python/2.7/site-packages/" ]
+  then
+    sudo mv markdownpp/md++PythonModule /Library/Python/2.7/site-packages/mdpp.py &&
+  else
+    sudo rm md++PythonModule
+  fi
+  echo Created Python Module. &&
   sudo mv markdownpp/VERSION /usr/local/bin/markdownpp/VERSION &&
   echo Updated VERSION file &&
   sudo mv -f markdownpp/update.sh /usr/local/bin/markdownpp/update.sh &&
