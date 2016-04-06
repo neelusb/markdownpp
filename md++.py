@@ -2,11 +2,11 @@ import mdpp
 
 isOutFile=1
 inpFile=raw_input("Drag and drop a file or enter /path/to/input.md++ here: ")
-outFile=raw_input("OPTIONAL: Drag and drop a file or enter /path/to/output.html here: (Leave this blank to print HTML output to console.) ")
+outFile=raw_input("OPTIONAL: Drag and drop a file or enter /path/to/output.html here: (Leave this blank to print HTML output to terminal.) ")
 title=raw_input("Page Title: (Leave this blank to make the title the date and time of compile) ")
-inp=open(inpFile, "r").read()
 if inpFile[-1]==' ':
     inpFile=inpFile[:-1]
+inp=open(inpFile, "r").read()
 if outFile[-1]==' ':
     outFile=outFile[:-1]
 if outFile=='':

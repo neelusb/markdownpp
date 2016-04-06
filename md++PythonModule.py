@@ -7,7 +7,7 @@ out=''
 def run(md, title):
     global out
     out=''
-    bold=False
+    bold=0
     escapeMd=''
     imageUrl=''
     imageAlt=''
@@ -37,6 +37,7 @@ def run(md, title):
         global out
         out=out+'</span><span '+cssCodeClass+cssSupClass+'style="font-weight: '+('normal','bold')[bold]+'; text-decoration: '+('none','underline','line-through','overline')[line]+'; font-style: '+('normal','oblique','italic')[style]+'; font-size: '+size+'; text-align: '+align+'; '+styleContent+'" >'
     out=out+"""<!DOCTYPE html>
+    <html>
     <head>
         <style>.code {background-color:#EEEEEE;font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;} .sup { vertical-align: super; }</style>
         <title>"""+title+"""</title>
@@ -68,7 +69,7 @@ def run(md, title):
             md=md[2:]
             continue
         if md.startswith("=#="):
-            bold=False
+            bold=0
             size="medium"
             isHeading=False
             md=md[3:]
@@ -77,42 +78,42 @@ def run(md, title):
         if md.startswith("######"):
             isHeading=True
             size="0.75em"
-            bold=True
+            bold=1
             md=md[6:]
             createspan()
             continue
         if md.startswith("#####"):
             isHeading=True
             size="0.83em"
-            bold=True
+            bold=1
             md=md[5:]
             createspan()
             continue
         if md.startswith("####"):
             isHeading=True
             size="1em"
-            bold=True
+            bold=1
             md=md[4:]
             createspan()
             continue
         if md.startswith("###"):
             isHeading=True
             size="1.17em"
-            bold=True
+            bold=1
             md=md[3:]
             createspan()
             continue
         if md.startswith("##"):
             isHeading=True
             size="1.5em"
-            bold=True
+            bold=1
             md=md[2:]
             createspan()
             continue
         if md.startswith("#"):
             isHeading=True
             size="2em"
-            bold=True
+            bold=1
             md=md[1:]
             createspan()
             continue
@@ -226,7 +227,7 @@ def run(md, title):
             md=md[4:]
             out=out+('      <div style="width: 90%; background-color: '+color+'; margin-left: '+('0','10','10','20')[('left','center','justify','right').index(align)]+'%; height: 2px;"></div>\n')
             continue
-        if md.startswith("1---" or "---"):
+        if md.startswith("1---":
             md=md[4:]
             out=out+('      <div style="width: 100%; background-color: '+color+'; margin-left: '+('0','10','10','20')[('left','center','justify','right').index(align)]+'%; height: 2px;"></div>\n')
             continue
@@ -243,10 +244,10 @@ def run(md, title):
             out=out+('      <div style="width: 50%; background-color: '+color+'; margin-left: '+('0','10','10','20')[('left','center','justify','right').index(align)]+'%; height: 2px;"></div>\n')
             continue
         if md.startswith("**"):
-            if bold==False:
-                bold=True
+            if bold==0:
+                bold=1
             else:
-                bold=False
+                bold=0
             md=md[2:]
             createspan()
             continue
@@ -338,7 +339,7 @@ def run(md, title):
             md=md[4:]
         if md.startswith(";;"):
             if isHeading==True:
-                bold=False
+                bold=0
                 size="medium"
                 isHeading=False
             out=out+('<br />')
@@ -347,7 +348,7 @@ def run(md, title):
             continue
         if md.startswith("  "):
             if isHeading==True:
-                bold=False
+                bold=0
                 size="medium"
                 isHeading=False
             out=out+('<br />')
