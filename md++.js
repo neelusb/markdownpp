@@ -1,4 +1,4 @@
-var out=''
+var out='';
 function mdpprun(md) {  
   var bold=0;
   var escapeMd='';
