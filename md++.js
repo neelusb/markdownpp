@@ -1,5 +1,6 @@
 var out='';
 function mdpprun(md) {  
+  out='';
   var bold=0;
   var escapeMd='';
   var imageUrl='';
