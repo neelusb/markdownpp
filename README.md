@@ -58,7 +58,7 @@ For example: `@181` --> &#181;
 **NOTE:** Currently, CSS styling can not be used with images and hyperlinks. This will be fixed in a later update.
 
 ### Comments
-*Comments are notes left by the user that aren't visible in the output. Use `/\*` and `\*/` for comments.*  
+*Comments are notes left by the user that aren't visible in the output. Use `<span</*</span>` and `<span>*/</span>` for comments.*  
 `You can see this. /*You can't see this.*/` --> You can see this.
 
 ### Lines  
@@ -72,7 +72,7 @@ For example: `@181` --> &#181;
 
 
 ### Page Title
-Currently, the page title is the date and time of compile. This will change in the future.
+You can specify a page title when requested in the script. If you don't specify a title, it will be the date and time of compile.
 
 ## Downloading and Installing
 
