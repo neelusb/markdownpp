@@ -1,4 +1,9 @@
 var out='';
+var tags=document.getElementsByTagName('mdpp');
+while (tags.length>0) {
+  tags[0].innerHTML=mdpprun(tags[0].innerHTML);
+  tags.shift();
+}
 function mdpprun(md) {  
   out='';
   var bold=0;
