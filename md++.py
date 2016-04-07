@@ -1,8 +1,10 @@
+#!/usr/bin/env python
 import mdpp
+import sys
 
 isOutFile=1
-inpFile=raw_input("Drag and drop a file or enter /path/to/input.md++ here: ")
-outFile=raw_input("OPTIONAL: Drag and drop a file or enter /path/to/output.html here: (Leave this blank to print HTML output to terminal.) ")
+print len(sys.argv)
+script, inpFile, outFile = sys.argv
 title=raw_input("Page Title: (Leave this blank to make the title the date and time of compile) ")
 if inpFile[-1]==' ':
     inpFile=inpFile[:-1]
