@@ -227,7 +227,7 @@ def run(md, title):
             md=md[4:]
             out=out+('      <div style="width: 90%; background-color: '+color+'; margin-left: '+('0','10','10','20')[('left','center','justify','right').index(align)]+'%; height: 2px;"></div>\n')
             continue
-        if md.startswith("1---":
+        if md.startswith("1---"):
             md=md[4:]
             out=out+('      <div style="width: 100%; background-color: '+color+'; margin-left: '+('0','10','10','20')[('left','center','justify','right').index(align)]+'%; height: 2px;"></div>\n')
             continue
