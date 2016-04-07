@@ -58,7 +58,7 @@ For example: `@181` --> &#181;
 **NOTE:** Currently, CSS styling can not be used with images and hyperlinks. This will be fixed in a later update.
 
 ### Comments
-*Comments are notes left by the user that aren't visible in the output. Use `/*` and `*/` for comments.*  
+*Comments are notes left by the user that aren't visible in the output. Use `/*` and `*/` for comments. 
 `You can see this. /*You can't see this.*/` --> You can see this.
 
 ### Lines  
@@ -72,7 +72,7 @@ For example: `@181` --> &#181;
 
 
 ### Page Title
-Currently, the page title is the date and time of compile. This will change in the future.
+You can specify a page title when requested in the script. If you don't specify a title, it will be the date and time of compile.
 
 ## Downloading and Installing
 
@@ -86,10 +86,7 @@ Download the install script for your Operating System, and then execute it by do
 
 ##Usage
 
-Use the following command to translate a MarkDown++ file into an HTML file:
-```
-md++ < /path/to/input.md++ > /path/to/output.html
-```
+To use MarkDown++, just type the command `md++` in your terminal. Then, follow the instructions by providing an input file, an optional output file, and an optional title.
 
 ## Updating and Uninstalling
 Update and Uninstall scripts are automatically installed when you install MarkDown++.  
