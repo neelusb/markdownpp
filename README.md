@@ -58,7 +58,7 @@ For example: `@181` --> &#181;
 **NOTE:** Currently, CSS styling can not be used with images and hyperlinks. This will be fixed in a later update.
 
 ### Comments
-*Comments are notes left by the user that aren't visible in the output. Use `<span</*</span>` and `<span>*/</span>` for comments.*  
+*Comments are notes left by the user that aren't visible in the output.  
 `You can see this. /*You can't see this.*/` --> You can see this.
 
 ### Lines  
