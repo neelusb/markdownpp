@@ -422,11 +422,11 @@ function mdpprun(md) {
     out=out+md[0];
     md=md.slice(1);
   }
-  out=out+'</span>';
+  out=out+'</span><style>.code {background-color:#EEEEEE;font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;} .sup { vertical-align: super; }</style>';
   return out;
 }
 function mdppdocrun(md) {
-  out=out+"<!DOCTYPE html>\n<html>\n  <head>\n    <style>.code {background-color:#EEEEEE;font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;} .sup { vertical-align: super; }</style>\n     <title>"+title+"</title>\n  </head><body>";
+  out=out+"<!DOCTYPE html>\n<html>\n  <head>\n    \n     <title>"+title+"</title>\n  </head><body>";
   out=run(md);
   out=out+"\n    </body>\n</html>";
   return out;
