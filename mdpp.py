@@ -363,5 +363,5 @@ def run(md, title):
     </html>""")
     return out
 def prnt(md, title):
-    sys.stdout.write(out(md), title)
+    sys.stdout.write(run(md, title))
     sys.stdout.flush()
