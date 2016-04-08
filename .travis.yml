@@ -6,4 +6,4 @@ python:
   - "3.3"
   - "3.4"
   - "pypy"
-script: python mdppinterpreter.py test.md++
+script: python mdppInterpreter.py test.md++
