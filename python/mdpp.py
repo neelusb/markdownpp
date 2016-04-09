@@ -2,7 +2,6 @@
 
 import sys
 import datetime
-import os
 out=''
 def run(md, title):
     global out
