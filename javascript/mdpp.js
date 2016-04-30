@@ -28,7 +28,7 @@ function mdpprun(md) {
   var align='left';
   function createspan(){
     out=out+'</span><span '+cssCodeClass+cssSupClass+'style="font-weight: '+Array('normal','bold')[bold]+'; text-decoration: '+Array('none','underline','line-through','overline')[line]+'; font-style: '+Array('normal','oblique','italic')[style]+'; font-size: '+size+'; text-align: '+align+'; '+styleContent+'" >';
-}
+  }
   out=out+"<span>";
   createspan();
   while (md.length>0) {
